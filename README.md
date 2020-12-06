@@ -216,21 +216,9 @@ Set these additional secrets to enable the action:
 - `GIT_USER_NAME`: The Github user's real name.
 - `GIT_USER_EMAIL`: The Github user's email.
 - `GPG_PASSPHRASE`: The Github user's GPG passphrase.
-- `GPG_PRIVATE_KEY`: The Github user's GPG private key.
+- `GPG_PRIVATE_KEY`: The Github user's [GPG private key].
 
 [GitHub Actions]: https://github.com/features/actions
-
-## GitHub Actions
-
-*GitHub Actions should already be configured: this section is for reference only.*
-
-The following secrets must be set on the GitHub repo.
-
-- `GPG_PRIVATE_KEY`: The [GPG private key].
-- `GPG_PASSPHRASE`: The GPG key passphrase.
-- `GIT_USER_NAME`: The name to set for Git commits.
-- `GIT_USER_EMAIL`: The email to set for Git commits.
-
 [GPG private key]: https://github.com/marketplace/actions/import-gpg#prerequisites
 
 ## Contributing
