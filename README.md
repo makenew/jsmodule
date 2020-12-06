@@ -206,6 +206,18 @@ The following environment variables must be set on [GitHub Actions]:
 
 These must be set manually.
 
+### Secrets for GitHub Action to Cut Version (Optional)
+
+The version GitHub action requires a user with write access to the repository.
+Set these additional secrets to enable the action:
+
+- `GH_TOKEN`: A personal access token for the user.
+- `GH_USER`: The Github user's username.
+- `GIT_USER_NAME`: The Github user's real name.
+- `GIT_USER_EMAIL`: The Github user's email.
+- `GPG_PASSPHRASE`: The Github user's GPG passphrase.
+- `GPG_PRIVATE_KEY`: The Github user's GPG private key.
+
 [GitHub Actions]: https://github.com/features/actions
 
 ## GitHub Actions
