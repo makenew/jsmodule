@@ -44,7 +44,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
       - name: Publish
-        if: !endsWith(github.ref, steps.published-version.outputs.version)
+        if: endsWith(github.ref, steps.published-version.outputs.version) == false
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -86,6 +86,6 @@ jobs:
         run: yarn install --frozen-lockfile --non-interactive
       - name: Publish
         run: npm publish --access public
-        if: !endsWith(github.ref, steps.published-version.outputs.version)
+        if: endsWith(github.ref, steps.published-version.outputs.version) == false
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
