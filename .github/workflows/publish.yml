@@ -65,6 +65,10 @@ jobs:
         run: echo "::set-output name=version::$(npm view $(jq -r '.name' package.json)@$(jq -r '.version' package.json) version)"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Show published version
+        run: echo $VER
+        env:
+          VER: ${{ steps.published-version.outputs.version }}
       - name: Get yarn cache directory
         id: yarn-cache-dir
         run: echo "::set-output name=dir::$(yarn cache dir)"
