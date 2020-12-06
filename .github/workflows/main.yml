@@ -19,8 +19,6 @@ jobs:
           fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v2-beta
-        with:
-          node-version: 14.x
       - name: Get yarn cache directory
         id: yarn-cache-dir
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -56,8 +54,6 @@ jobs:
           fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v2-beta
-        with:
-          node-version: 14.x
       - name: Get yarn cache directory
         id: yarn-cache-dir
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -93,8 +89,6 @@ jobs:
           fetch-depth: 0
       - name: Setup Node.js
         uses: actions/setup-node@v2-beta
-        with:
-          node-version: 14.x
       - name: Get yarn cache directory
         id: yarn-cache-dir
         run: echo "::set-output name=dir::$(yarn cache dir)"
