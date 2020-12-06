@@ -2,10 +2,9 @@
 name: publish
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: Version to cut
+  push:
+    tags:
+      - v*
 
 jobs:
   npm:
