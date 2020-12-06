@@ -27,9 +27,9 @@ jobs:
           GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
           PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
       - name: Setup Node.js
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2-beta
         with:
-          node-version: 12.x
+          node-version: 14.x
       - name: Set config
         env:
           GH_USER: ${{ secrets.GH_USER }}
