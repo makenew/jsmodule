@@ -1,7 +1,7 @@
 # JavaScript Module Package Skeleton
 
 [![npm](https://img.shields.io/npm/v/@makenew/jsmodule.svg)](https://www.npmjs.com/package/@makenew/jsmodule)
-[![CircleCI](https://img.shields.io/circleci/project/github/makenew/jsmodule.svg)](https://circleci.com/gh/makenew/jsmodule)
+![main](https://github.com/makenew/jsmodule/workflows/main/badge.svg)
 
 Package skeleton for a JavaScript module.
 
@@ -20,15 +20,15 @@ Bootstrap a new JavaScript module in five minutes or less.
 - Automatically lint on changes with [gulp].
 - Futuristic debuggable unit testing with [AVA].
 - Code coverage reporting with [Istanbul] and [nyc].
-- Continuous testing and automated package publishing with [CircleCI].
+- Continuous testing and automated package publishing with [GitHub Actions].
 - [Keep a CHANGELOG].
 - Consistent coding with [EditorConfig].
 - Badges from [Shields.io].
 
 [AVA]: https://github.com/avajs/ava
 [Babel]: https://babeljs.io/
-[CircleCI]: https://circleci.com/
 [EditorConfig]: https://editorconfig.org/
+[GitHub Actions]: https://github.com/features/actions
 [Istanbul]: https://istanbul.js.org/
 [JSON Lint]: https://github.com/zaach/jsonlint
 [JavaScript Standard Style]: https://standardjs.com/
@@ -61,10 +61,7 @@ Bootstrap a new JavaScript module in five minutes or less.
    This will replace the boilerplate, delete itself,
    remove the git remote, remove upstream tags,
    and stage changes for commit.
-4. Create the required CircleCI environment variables with
-   ```
-   $ .circleci/envvars.sh
-   ```
+4. Create the required GitHub repository secrets
 5. Review, commit, and push the changes to GitHub with
    ```
    $ git diff --cached
@@ -72,7 +69,7 @@ Bootstrap a new JavaScript module in five minutes or less.
    $ git remote add origin git@github.com:<user>/<new-node-lib>.git
    $ git push -u origin master
    ```
-6. Ensure the CircleCI build passes,
+6. Ensure the GitHub action passes,
    then publish the initial version of the package with
    ```
    $ nvm install
@@ -191,7 +188,7 @@ $ yarn install
 ### Publishing
 
 Use the [`npm version`][npm-version] command to release a new version.
-This will push a new git tag which will trigger a CircleCI publish job.
+This will push a new git tag which will trigger a GitHub action.
 
 Publishing may be triggered using on the web
 using a [workflow_dispatch on GitHub Actions].
@@ -199,17 +196,17 @@ using a [workflow_dispatch on GitHub Actions].
 [npm-version]: https://docs.npmjs.com/cli/version
 [workflow_dispatch on GitHub Actions]: https://github.com/makenew/jsmodule/actions?query=workflow%3Aversion
 
-## CircleCI
+## GitHub Actions
 
-_CircleCI should already be configured: this section is for reference only._
+_GitHub Actions should already be configured: this section is for reference only._
 
-The following environment variables must be set on [CircleCI]:
+The following environment variables must be set on [GitHub Actions]:
 
 - `NPM_TOKEN`: npm token for installing and publishing packages.
 
-These may be set manually or by running the script `./.circleci/envvars.sh`.
+These must be set manually.
 
-[CircleCI]: https://circleci.com/
+[GitHub Actions]: https://github.com/features/actions
 
 ## GitHub Actions
 
