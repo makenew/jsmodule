@@ -42,7 +42,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile --non-interactive
       - name: Publish
-        if: step.published-version.outputs.view == ''
+        if: steps.published-version.outputs.view == ''
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -82,6 +82,6 @@ jobs:
         run: yarn install --frozen-lockfile --non-interactive
       - name: Publish
         run: npm publish --access public
-        if: step.published-version.outputs.view == ''
+        if: steps.published-version.outputs.view == ''
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
