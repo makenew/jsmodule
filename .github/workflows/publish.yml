@@ -22,6 +22,8 @@ jobs:
       - name: Check published version
         id: published-version
         run: echo "::set-output name=view::$(npm view $(jq -r '.name' package.json)@$(jq -r '.version' package.json))"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Get yarn cache directory
         id: yarn-cache-dir
         run: echo "::set-output name=dir::$(yarn cache dir)"
@@ -61,6 +63,8 @@ jobs:
       - name: Check published version
         id: published-version
         run: echo "::set-output name=view::$(npm view $(jq -r '.name' package.json)@$(jq -r '.version' package.json))"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Get yarn cache directory
         id: yarn-cache-dir
         run: echo "::set-output name=dir::$(yarn cache dir)"
