@@ -1,5 +1,5 @@
 ---
-name: publish
+name: Publish version
 
 run-name: Publish ${{ github.ref_name }}
 
@@ -10,6 +10,7 @@ on:
 
 jobs:
   artifacts:
+    name: Build artifacts
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -26,6 +27,7 @@ jobs:
           if-no-files-found: error
           path: '*.tgz'
   release:
+    name: GitHub Releases
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: artifacts
@@ -45,6 +47,7 @@ jobs:
           prerelease: ${{ contains(github.ref_name, '-') }}
           files: '*.tgz'
   npm:
+    name: npm
     runs-on: ubuntu-latest
     timeout-minutes: 30
     needs: artifacts
@@ -72,6 +75,7 @@ jobs:
           target: ${{ steps.meta.outputs.tgz }}
           token: ${{ secrets.NPM_TOKEN }}
   github:
+    name: GitHub Packages
     runs-on: ubuntu-latest
     timeout-minutes: 30
     permissions:

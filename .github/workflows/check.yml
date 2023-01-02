@@ -1,5 +1,5 @@
 ---
-name: check
+name: Check
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   test:
+    name: Test
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     strategy:
@@ -30,6 +31,7 @@ jobs:
       - name: Test
         run: npm test
   lint:
+    name: Lint
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
