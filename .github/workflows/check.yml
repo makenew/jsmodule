@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    name: Test
+    name: Test (Node.js v${{ matrix.node }} on ${{ matrix.os_name }})
     runs-on: ${{ matrix.os }}
     timeout-minutes: 30
     strategy:
@@ -21,6 +21,13 @@ jobs:
         node:
           - '16'
           - '18'
+        include:
+          - os: ubuntu-latest
+            os_name: Linux
+          - os: macos-latest
+            os_name: macOS
+          - os: windows-latest
+            os_name: Windows
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -31,7 +38,7 @@ jobs:
       - name: Test
         run: npm test
   lint:
-    name: Lint
+    name: Lint (Node.js v${{ matrix.node }})
     runs-on: ubuntu-latest
     timeout-minutes: 30
     strategy:
