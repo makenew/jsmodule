@@ -61,15 +61,13 @@ jobs:
       - name: Get meta
         id: meta
         run: |
-          name=$(jq -r .name package.json)
-          version=$(jq -r .version package.json)
-          echo "name=${name}" >> $GITHUB_OUTPUT
-          echo "version=${version}" >> $GITHUB_OUTPUT
+          tgz=$(ls *.tgz | head -n1)
+          echo "tgz=${tgz}" >> $GITHUB_OUTPUT
       - name: Publish
         uses: rxfork/npm-publish@v1
         with:
           access: public
-          target: ${{ steps.meta.outputs.name }}-${{ steps.meta.outputs.version }}.tgz
+          target: ${{ steps.meta.outputs.tgz }}
           token: ${{ secrets.NPM_TOKEN }}
   github:
     runs-on: ubuntu-latest
@@ -90,14 +88,12 @@ jobs:
       - name: Get meta
         id: meta
         run: |
-          name=$(jq -r .name package.json)
-          version=$(jq -r .version package.json)
-          echo "name=${name}" >> $GITHUB_OUTPUT
-          echo "version=${version}" >> $GITHUB_OUTPUT
+          tgz=$(ls *.tgz | head -n1)
+          echo "tgz=${tgz}" >> $GITHUB_OUTPUT
       - name: Publish
         uses: rxfork/npm-publish@v1
         with:
           access: public
-          target: ${{ steps.meta.outputs.name }}-${{ steps.meta.outputs.version }}.tgz
+          target: ${{ steps.meta.outputs.tgz }}
           token: ${{ secrets.GITHUB_TOKEN }}
           registry: https://npm.pkg.github.com
