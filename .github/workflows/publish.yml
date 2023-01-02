@@ -53,7 +53,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
       - name: Publish
-        uses: JS-DevTools/npm-publish@v1
+        uses: rxfork/npm-publish@v1
         with:
           access: public
           token: ${{ secrets.NPM_TOKEN }}
@@ -68,7 +68,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
       - name: Publish
-        uses: JS-DevTools/npm-publish@v1
+        uses: rxfork/npm-publish@v1
         with:
           access: public
           token: ${{ secrets.GITHUB_TOKEN }}
