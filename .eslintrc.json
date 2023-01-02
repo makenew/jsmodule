@@ -1,4 +1,23 @@
 {
   "root": true,
-  "extends": ["standard", "prettier"]
+  "extends": ["standard", "prettier"],
+  "rules": {
+    "no-console": "warn",
+    "sort-imports": [
+      "warn",
+      {
+        "ignoreDeclarationSort": true,
+        "allowSeparatedGroups": true
+      }
+    ],
+    "import/order": [
+      "warn",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
+  }
 }
