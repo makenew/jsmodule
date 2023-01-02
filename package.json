@@ -42,7 +42,7 @@
     "report": "c8 report"
   },
   "engines": {
-    "node": ">=14.15.0",
+    "node": ">=16.13.0",
     "npm": ">= 8.1.0"
   },
   "devDependencies": {
