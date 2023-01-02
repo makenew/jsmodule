@@ -54,7 +54,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
         with:
-          install_dependencies: false
+          install_dependencies: 'false'
       - name: Download artifacts
         uses: actions/download-artifact@v3
         with:
@@ -83,7 +83,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
         with:
-          install_dependencies: false
+          install_dependencies: 'false'
       - name: Download artifacts
         uses: actions/download-artifact@v3
         with:
