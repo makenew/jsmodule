@@ -51,9 +51,9 @@ jobs:
     uses: ./.github/workflows/publish-package.yml
     needs: artifacts
     with:
-       registry_host: https://registry.npmjs.org
+      registry_host: https://registry.npmjs.org
     secrets:
-       registry_token: ${{ secrets.NPM_TOKEN }}
+      registry_token: ${{ secrets.NPM_TOKEN }}
   github:
     name: GitHub Packages
     uses: ./.github/workflows/publish-package.yml
@@ -61,6 +61,6 @@ jobs:
       packages: write
     needs: artifacts
     with:
-       registry_host: https://npm.pkg.github.com
+      registry_host: https://npm.pkg.github.com
     secrets:
-       registry_token: ${{ secrets.GITHUB_TOKEN }}
+      registry_token: ${{ secrets.GITHUB_TOKEN }}
