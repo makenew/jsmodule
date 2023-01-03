@@ -1,0 +1,44 @@
+---
+name: Publish package
+
+on:
+  workflow_call:
+    inputs:
+      registry_host:
+        description: The package registry host.
+        type: string
+        required: true
+    secrets:
+      registry_token:
+        description: The package registry token.
+        required: true
+
+jobs:
+  publish:
+    name: Publish package
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup
+        uses: ./.github/actions/setup
+        with:
+          install_dependencies: 'false'
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ github.sha }}
+          path: .
+      - name: Get meta
+        id: meta
+        run: |
+          tgz=$(ls *.tgz | head -n1)
+          echo "tgz=${tgz}" >> $GITHUB_OUTPUT
+      - name: Publish
+        uses: rxfork/npm-publish@v1
+        with:
+          access: public
+          target: ${{ steps.meta.outputs.tgz }}
+          token: ${{ secrets.registry_token }}
+          registry: ${{ inputs.registry_host }}
