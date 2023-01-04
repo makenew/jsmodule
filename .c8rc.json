@@ -3,7 +3,8 @@
     "**/index.js",
     "package/**/*.js",
     "examples/**/*.js",
-    "**/*.spec.js"
+    "**/*.spec.js",
+    "ava.config.js"
   ],
   "reporter": ["html", "lcov", "text"]
 }
