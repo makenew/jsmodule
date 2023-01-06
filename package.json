@@ -22,7 +22,8 @@
   },
   "files": [
     "index.js",
-    "lib"
+    "lib",
+    "!**/*.spec.js"
   ],
   "scripts": {
     "test": "c8 ava",
