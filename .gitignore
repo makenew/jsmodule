@@ -8,9 +8,6 @@
 # Build directories
 package
 
-# Local config
-examples/local.json
-
 # Environment versions file
 .versions
 

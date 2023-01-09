@@ -1,23 +1,34 @@
-import path from 'path'
+#!/usr/bin/env node
 
-import { createExamples } from '@meltwater/examplr'
+import process from 'node:process'
 
-import todo from './todo.js'
+import { pino } from 'pino'
+import yargs from 'yargs'
 
-const examples = {
-  todo
+import * as todo from './todo.js'
+
+const commands = [todo]
+
+const createLogger = (argv) => {
+  argv.logger = pino({
+    transport: {
+      target: 'pino-pretty'
+    }
+  })
 }
 
-const envVars = ['LOG_LEVEL', 'LOG_FILTER', 'LOG_OUTPUT_MODE']
+const middleware = [createLogger]
 
-const defaultOptions = {}
+// UPSTREAM: https://github.com/yargs/yargs/issues/1005
+const availableCommands = `
+Available commands:
+  ${commands.map(({ command }) => command).join('\n  ')}
+`
 
-const { runExample } = createExamples({
-  examples,
-  envVars,
-  defaultOptions
-})
-
-runExample({
-  local: path.resolve('examples', 'local.json')
-})
+await yargs(process.argv.slice(2))
+  .middleware(middleware)
+  .command(commands)
+  .demandCommand(1, 1, availableCommands.trim())
+  .recommendCommands()
+  .strict()
+  .parse()

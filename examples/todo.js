@@ -1,9 +1,13 @@
 import { todo } from '../index.js'
 
-export default ({ log }) =>
-  async (check = true) => {
-    log.debug({ check }, 'Input')
-    const result = todo(check)
-    if (!result) throw new Error('Check was not truthy.')
-    return result
+export const command = 'todo x'
+
+export const builder = {
+  x: {
+    type: 'string'
   }
+}
+
+export const handler = async ({ x, logger }) => {
+  logger.info({ data: todo(x) }, 'TODO')
+}

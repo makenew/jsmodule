@@ -13,7 +13,7 @@ Bootstrap a new JavaScript module in five minutes or less.
 
 - [Node.js]'s [npm] package structure.
 - Package management with [npm].
-- Examples with configurable options and arguments powered by [examplr].
+- Examples with configurable options and arguments powered by [yargs].
 - Linting with the [JavaScript Standard Style] using [ESLint].
 - [Prettier] code.
 - Futuristic debuggable unit testing with [AVA].
@@ -34,7 +34,7 @@ Bootstrap a new JavaScript module in five minutes or less.
 [Prettier]: https://prettier.io/
 [Shields.io]: https://shields.io/
 [c8]: https://github.com/bcoe/c8
-[examplr]: https://github.com/meltwater/node-examplr
+[yargs]: https://yargs.js.org/
 [npm]: https://www.npmjs.com/
 
 ### Bootstrapping a new project
