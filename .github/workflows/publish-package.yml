@@ -4,6 +4,10 @@ name: Publish package
 on:
   workflow_call:
     inputs:
+      artifact_name:
+        description: The artifact name.
+        type: string
+        required: true
       registry_host:
         description: The package registry host.
         type: string
@@ -25,16 +29,14 @@ jobs:
         uses: ./.github/actions/setup
         with:
           install_dependencies: 'false'
-      - name: Download artifacts
+      - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: ${{ github.sha }}
+          name: ${{ inputs.artifact_name }}
           path: .
       - name: Get meta
         id: meta
-        run: |
-          tgz=$(ls *.tgz | head -n1)
-          echo "tgz=${tgz}" >> $GITHUB_OUTPUT
+        run: echo "tgz=$(ls *.tgz | head -n1)" >> $GITHUB_OUTPUT
       - name: Publish
         uses: rxfork/npm-publish@v1
         with:
