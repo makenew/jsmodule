@@ -1,5 +1,5 @@
 ---
-name: Publish version
+name: Publish
 
 run-name: Publish ${{ github.ref_name }}
 
@@ -11,7 +11,7 @@ on:
 jobs:
   build:
     name: Build
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/_build.yml
   release:
     name: GitHub Releases
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
           files: '*.tgz'
   npm:
     name: npm
-    uses: ./.github/workflows/publish-package.yml
+    uses: ./.github/workflows/_publish.yml
     needs: build
     with:
       artifact_name: ${{ needs.build.outputs.artifact_name }}
@@ -43,7 +43,7 @@ jobs:
       registry_token: ${{ secrets.NPM_TOKEN }}
   github:
     name: GitHub Packages
-    uses: ./.github/workflows/publish-package.yml
+    uses: ./.github/workflows/_publish.yml
     permissions:
       packages: write
     needs: build

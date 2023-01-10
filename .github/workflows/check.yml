@@ -58,7 +58,7 @@ jobs:
         run: npm run lint
   build:
     name: Build
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/_build.yml
   install:
     name: Install (Node.js v${{ matrix.node }} on ${{ matrix.os_name }})
     runs-on: ubuntu-latest

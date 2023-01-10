@@ -1,5 +1,5 @@
 ---
-name: Build package
+name: _build
 
 on:
   workflow_call:
