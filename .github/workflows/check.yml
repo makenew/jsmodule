@@ -85,7 +85,6 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          cache: npm
           node-version: ${{ matrix.node }}
       - name: Download artifact
         uses: actions/download-artifact@v3
