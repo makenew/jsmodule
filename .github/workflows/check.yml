@@ -91,20 +91,27 @@ jobs:
         with:
           name: ${{ needs.build.outputs.artifact_name }}
           path: .
-      - name: Find targets
+      - name: Find packages
         uses: tj-actions/glob@v16
-        id: targets
+        id: packages
         with:
           files: '*.tgz'
+      - name: Create package.json
+        uses: DamianReeves/write-file-action@v1.2
+        with:
+          write-mode: overwrite
+          path: package.json
+          contents: '{}'
+      - name: Create index.mjs
+        uses: DamianReeves/write-file-action@v1.2
+        with:
+          write-mode: overwrite
+          path: index.mjs
+          contents: |
+            import '@makenew/jsmodule'
       - name: Install
-        run: |
-          echo '{}' > package.json
-          npm install $TARGETS
+        run: npm install $PACKAGES
         env:
-          TARGETS: ${{ steps.targets.outputs.paths }}
-      - name: Import
-        run: echo "import '$MODULE_IMPORT_NAME'" > index.mjs
-        env:
-          MODULE_IMPORT_NAME: '@makenew/jsmodule'
+          PACKAGES: ${{ steps.packages.outputs.paths }}
       - name: Run
         run: node index.mjs
