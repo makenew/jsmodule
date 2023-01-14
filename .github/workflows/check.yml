@@ -70,6 +70,7 @@ jobs:
         os:
           - ubuntu-latest
           - macos-latest
+          - windows-latest
         node:
           - '16'
           - '18'
@@ -78,6 +79,8 @@ jobs:
             os_name: Linux
           - os: macos-latest
             os_name: macOS
+          - os: windows-latest
+            os_name: Windows
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -88,9 +91,18 @@ jobs:
         with:
           name: ${{ needs.build.outputs.artifact_name }}
           path: .
+      - name: Find targets
+        uses: tj-actions/glob@v16
+        id: targets
+        with:
+          files: '*.tgz'
       - name: Install
-        run: npm install *.tgz
+        run: npm install $TARGETS
+        env:
+          TARGETS: ${{ steps.targets.outputs.paths }}
       - name: Import
-        run: echo "import '$(jq -r '.dependencies | keys[0]' < package.json)'" > index.mjs
+        run: echo "import '$MODULE_IMPORT_NAME'" > index.mjs
+        env:
+          MODULE_IMPORT_NAME: '@makenew/jsmodule'
       - name: Run
         run: node index.mjs
