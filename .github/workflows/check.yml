@@ -110,7 +110,7 @@ jobs:
           contents: |
             import '@makenew/jsmodule'
       - name: Install
-        run: npm install $PACKAGES
+        run: npm install --save $PACKAGES
         env:
           PACKAGES: ${{ steps.packages.outputs.paths }}
       - name: Run
