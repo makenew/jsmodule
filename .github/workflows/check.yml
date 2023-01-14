@@ -97,7 +97,9 @@ jobs:
         with:
           files: '*.tgz'
       - name: Install
-        run: npm install $TARGETS
+        run: |
+          echo '{}' > package.json
+          npm install $TARGETS
         env:
           TARGETS: ${{ steps.targets.outputs.paths }}
       - name: Import
