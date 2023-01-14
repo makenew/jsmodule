@@ -101,12 +101,13 @@ jobs:
         with:
           write-mode: overwrite
           path: package.json
-          contents: '{}'
+          contents: |
+            {"type":"module"}
       - name: Create index.mjs
         uses: DamianReeves/write-file-action@v1.2
         with:
           write-mode: overwrite
-          path: index.mjs
+          path: index.js
           contents: |
             import '@makenew/jsmodule'
       - name: Install
