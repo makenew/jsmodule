@@ -103,7 +103,7 @@ jobs:
           path: package.json
           contents: |
             {"type":"module"}
-      - name: Create index.mjs
+      - name: Create index.js
         uses: DamianReeves/write-file-action@v1.2
         with:
           write-mode: overwrite
