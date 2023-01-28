@@ -70,6 +70,7 @@ jobs:
         os:
           - ubuntu-latest
           - macos-latest
+          - windows-latest
         node:
           - '16'
           - '18'
@@ -78,6 +79,8 @@ jobs:
             os_name: Linux
           - os: macos-latest
             os_name: macOS
+          - os: windows-latest
+            os_name: Windows
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -88,9 +91,26 @@ jobs:
         with:
           name: ${{ needs.build.outputs.artifact_name }}
           path: .
+      - name: Find packages
+        uses: tj-actions/glob@v16
+        id: packages
+        with:
+          files: '*.tgz'
+      - name: Create package.json
+        uses: DamianReeves/write-file-action@v1.2
+        with:
+          write-mode: overwrite
+          path: package.json
+          contents: |
+            {"type":"module"}
+      - name: Create index.js
+        uses: DamianReeves/write-file-action@v1.2
+        with:
+          write-mode: overwrite
+          path: index.js
+          contents: |
+            import '@makenew/jsmodule'
       - name: Install
-        run: npm install *.tgz
-      - name: Import
-        run: echo "import '$(jq -r '.dependencies | keys[0]' < package.json)'" > index.mjs
+        run: npm install --save ${{ steps.packages.outputs.paths }}
       - name: Run
-        run: node index.mjs
+        run: node index.js
