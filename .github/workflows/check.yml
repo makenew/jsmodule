@@ -115,4 +115,6 @@ jobs:
         env:
           PACKAGES: ${{ steps.packages.outputs.paths }}
       - name: Run
-        run: node index.js
+        run: |
+          ls node_modules
+          node index.js
