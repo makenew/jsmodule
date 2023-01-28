@@ -3,6 +3,7 @@
   "extends": ["standard", "prettier"],
   "rules": {
     "no-console": "warn",
+    "import/extensions": ["error", "ignorePackages"],
     "sort-imports": [
       "warn",
       {
