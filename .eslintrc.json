@@ -5,14 +5,14 @@
     "no-console": "warn",
     "import/extensions": ["error", "ignorePackages"],
     "sort-imports": [
-      "warn",
+      "error",
       {
         "ignoreDeclarationSort": true,
         "allowSeparatedGroups": true
       }
     ],
     "import/order": [
-      "warn",
+      "error",
       {
         "newlines-between": "always",
         "alphabetize": {
