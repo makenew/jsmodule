@@ -116,5 +116,5 @@ jobs:
           PACKAGES: ${{ steps.packages.outputs.paths }}
       - name: Run
         run: |
-          ls node_modules
+          ls
           NODE_DEBUG=module node index.js
