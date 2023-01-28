@@ -111,10 +111,8 @@ jobs:
           contents: |
             import '@makenew/jsmodule'
       - name: Install
-        run: npm install --save $PACKAGES
+        run: npm install --save makenew-jsmodule-9.5.2.tgz
         env:
           PACKAGES: ${{ steps.packages.outputs.paths }}
       - name: Run
-        run: |
-          ls
-          NODE_DEBUG=module node index.js
+        run: node index.js
