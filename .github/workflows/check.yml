@@ -117,4 +117,4 @@ jobs:
       - name: Run
         run: |
           ls node_modules
-          node index.js
+          NODE_DEBUG=module node index.js
