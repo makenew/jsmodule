@@ -13,7 +13,7 @@ Bootstrap a new JavaScript module in five minutes or less.
 
 - [Node.js]'s [npm] package structure.
 - Package management with [npm].
-- Examples with configurable options and arguments powered by [yargs].
+- Examples with configurable options and arguments powered by [yargs] with [landlubber].
 - Linting with the [JavaScript Standard Style] using [ESLint].
 - [Prettier] code.
 - Futuristic debuggable unit testing with [AVA].
@@ -30,6 +30,7 @@ Bootstrap a new JavaScript module in five minutes or less.
 [Istanbul]: https://istanbul.js.org/
 [JavaScript Standard Style]: https://standardjs.com/
 [Keep a CHANGELOG]: https://keepachangelog.com/
+[landlubber]: https://github.com/razor-x/landlubber
 [Node.js]: https://nodejs.org/
 [Prettier]: https://prettier.io/
 [Shields.io]: https://shields.io/

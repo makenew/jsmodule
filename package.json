@@ -50,9 +50,7 @@
     "eslint": "^8.9.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-config-standard": "^17.0.0",
-    "pino": "^8.8.0",
-    "pino-pretty": "^9.1.1",
-    "prettier": "^2.3.0",
-    "yargs": "^17.6.2"
+    "landlubber": "^0.1.1",
+    "prettier": "^2.3.0"
   }
 }
