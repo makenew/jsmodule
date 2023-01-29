@@ -1,7 +1,7 @@
 # JavaScript Module Package Skeleton
 
 [![npm](https://img.shields.io/npm/v/@makenew/jsmodule.svg)](https://www.npmjs.com/package/@makenew/jsmodule)
-[![GitHub Actions](https://github.com/makenew/jsmodule/workflows/check/badge.svg)](https://github.com/makenew/jsmodule/actions)
+[![GitHub Actions](https://github.com/makenew/jsmodule/actions/workflows/check.yml/badge.svg)](https://github.com/makenew/jsmodule/actions/workflows/check.yml)
 
 Package skeleton for a JavaScript module.
 
