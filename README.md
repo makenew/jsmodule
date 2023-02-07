@@ -22,12 +22,14 @@ Bootstrap a new JavaScript module in five minutes or less.
 - [Keep a CHANGELOG].
 - Consistent coding with [EditorConfig].
 - Badges from [Shields.io].
+- Start coding instantly with [GitHub Codespaces].
 
 [AVA]: https://github.com/avajs/ava
 [ECMAScript module]: https://nodejs.org/api/esm.html
 [ESLint]: https://eslint.org/
 [EditorConfig]: https://editorconfig.org/
 [GitHub Actions]: https://github.com/features/actions
+[GitHub Codespaces]: https://github.com/features/packages
 [Istanbul]: https://istanbul.js.org/
 [JavaScript Standard Style]: https://standardjs.com/
 [Keep a CHANGELOG]: https://keepachangelog.com/
