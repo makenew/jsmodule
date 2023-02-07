@@ -33,13 +33,13 @@ Bootstrap a new JavaScript module in five minutes or less.
 [Istanbul]: https://istanbul.js.org/
 [JavaScript Standard Style]: https://standardjs.com/
 [Keep a CHANGELOG]: https://keepachangelog.com/
-[landlubber]: https://github.com/razor-x/landlubber
 [Node.js]: https://nodejs.org/
 [Prettier]: https://prettier.io/
 [Shields.io]: https://shields.io/
 [c8]: https://github.com/bcoe/c8
-[yargs]: https://yargs.js.org/
+[landlubber]: https://github.com/razor-x/landlubber
 [npm]: https://www.npmjs.com/
+[yargs]: https://yargs.js.org/
 
 ### Bootstrapping a new project
 
