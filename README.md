@@ -11,7 +11,7 @@ Bootstrap a new JavaScript module in five minutes or less.
 
 ### Features
 
-- [Node.js]'s [npm] package structure.
+- Native [ECMAScript module] compatible with [Node.js].
 - Package management with [npm].
 - Examples with configurable options and arguments powered by [yargs] with [landlubber].
 - Linting with the [JavaScript Standard Style] using [ESLint].
@@ -24,6 +24,7 @@ Bootstrap a new JavaScript module in five minutes or less.
 - Badges from [Shields.io].
 
 [AVA]: https://github.com/avajs/ava
+[ECMAScript module]: https://nodejs.org/api/esm.html
 [ESLint]: https://eslint.org/
 [EditorConfig]: https://editorconfig.org/
 [GitHub Actions]: https://github.com/features/actions
