@@ -45,6 +45,7 @@ jobs:
     name: GitHub Packages
     uses: ./.github/workflows/_publish.yml
     permissions:
+      contents: read
       packages: write
     needs: build
     with:
