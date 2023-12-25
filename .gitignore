@@ -5,7 +5,7 @@
 # For more details, visit the project page:
 # https://github.com/github/gitignore
 
-# Build directories
+# Build output
 package
 
 # Environment versions file
