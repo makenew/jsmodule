@@ -4,6 +4,7 @@
     "package/**/*.js",
     "examples/**/*.js",
     "**/*.spec.js",
+    "**/*.test.js",
     "ava.config.js"
   ],
   "reporter": ["html", "lcov", "text"]
