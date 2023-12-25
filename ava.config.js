@@ -1,4 +1,6 @@
 export default {
-  ignoredByWatcher: ['tmp/**/*'],
-  files: ['**/*.spec.js', '!package/**/*']
+  files: ['**/*.spec.js', '!package/**/*'],
+  ignoreChanges: {
+    watchMode: ['tmp/**/*']
+  }
 }
