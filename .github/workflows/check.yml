@@ -22,8 +22,8 @@ jobs:
           - macos-latest
           - windows-latest
         node:
-          - '16'
           - '18'
+          - '20'
         include:
           - os: ubuntu-latest
             os_name: Linux
@@ -48,8 +48,8 @@ jobs:
       fail-fast: false
       matrix:
         node:
-          - '16'
           - '18'
+          - '20'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -75,8 +75,8 @@ jobs:
           - macos-latest
           - windows-latest
         node:
-          - '16'
           - '18'
+          - '20'
         include:
           - os: ubuntu-latest
             os_name: Linux
