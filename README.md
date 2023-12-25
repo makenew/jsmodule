@@ -18,7 +18,8 @@ Bootstrap a new JavaScript module in five minutes or less.
 - [Prettier] code.
 - Futuristic debuggable unit testing with [AVA].
 - Code coverage reporting with [Istanbul] and [c8].
-- Continuous testing and package publishing with [GitHub Actions].
+- Fully automated version management and package publishing with [semantic-release].
+- Continuous checks and tests with [GitHub Actions].
 - [Keep a CHANGELOG].
 - Consistent coding with [EditorConfig].
 - Badges from [Shields.io].
@@ -36,6 +37,7 @@ Bootstrap a new JavaScript module in five minutes or less.
 [Node.js]: https://nodejs.org/
 [Prettier]: https://prettier.io/
 [Shields.io]: https://shields.io/
+[semantic-release]: https://semantic-release.gitbook.io/semantic-release/
 [c8]: https://github.com/bcoe/c8
 [landlubber]: https://github.com/razor-x/landlubber
 [npm]: https://www.npmjs.com/
@@ -198,7 +200,7 @@ These must be set manually.
 
 ### Secrets for Optional GitHub Actions
 
-The version and format GitHub actions
+The version, format, generate, and semantic-release GitHub actions
 require a user with write access to the repository.
 Set these additional secrets to enable the action:
 
