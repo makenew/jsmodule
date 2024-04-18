@@ -95,7 +95,7 @@ jobs:
           name: ${{ needs.build.outputs.artifact_name }}
           path: .
       - name: Find packages
-        uses: tj-actions/glob@v17
+        uses: tj-actions/glob@v21
         id: packages
         with:
           files: '*.tgz'
