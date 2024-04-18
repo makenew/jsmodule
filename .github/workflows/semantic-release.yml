@@ -41,7 +41,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Release version ${{ steps.release.outputs.new_release_version }} on ${{ github.ref_name }}
+      - name: Release version ${{ needs.semantic.outputs.new_release_version }} on ${{ github.ref_name }}
         run: gh workflow run version.yml --raw-field version=$VERSION --ref $BRANCH
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
