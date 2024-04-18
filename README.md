@@ -180,13 +180,30 @@ $ npm install
 
 ### Publishing
 
-Use the [`npm version`][npm-version] command to release a new version.
-This will push a new git tag which will trigger a GitHub action.
+New versions are created with [`npm version`][npm-version].
 
-Publishing may be triggered using a [workflow_dispatch on GitHub Actions].
+#### Automatic
 
+New versions are released automatically with [semantic-release]
+as long as commits follow the [Angular Commit Message Conventions].
+
+[Angular Commit Message Conventions]: https://semantic-release.gitbook.io/semantic-release/#commit-message-format
+[semantic-release]: https://semantic-release.gitbook.io/
+
+#### Manual
+
+Publish a new version by triggering a [version workflow_dispatch on GitHub Actions].
+The `version` input will be passed as the first argument to [npm-version].
+
+This may be done on the web or using the [GitHub CLI] with
+
+```
+$ gh workflow run version.yml --raw-field version=<version>
+```
+
+[GitHub CLI]: https://cli.github.com/
 [npm-version]: https://docs.npmjs.com/cli/version
-[workflow_dispatch on GitHub Actions]: https://github.com/makenew/jsmodule/actions?query=workflow%3Aversion
+[version workflow_dispatch on GitHub Actions]: https://github.com/seamapi/javascript-http/actions?query=workflow%3Aversion
 
 ## GitHub Actions
 
