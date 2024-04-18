@@ -30,17 +30,17 @@ Bootstrap a new JavaScript module in five minutes or less.
 [ESLint]: https://eslint.org/
 [EditorConfig]: https://editorconfig.org/
 [GitHub Actions]: https://github.com/features/actions
-[GitHub Codespaces]: https://github.com/features/packages
+[GitHub Codespaces]: https://github.com/features/codespaces
 [Istanbul]: https://istanbul.js.org/
 [JavaScript Standard Style]: https://standardjs.com/
 [Keep a CHANGELOG]: https://keepachangelog.com/
 [Node.js]: https://nodejs.org/
 [Prettier]: https://prettier.io/
 [Shields.io]: https://shields.io/
-[semantic-release]: https://semantic-release.gitbook.io/semantic-release/
 [c8]: https://github.com/bcoe/c8
 [landlubber]: https://github.com/razor-x/landlubber
 [npm]: https://www.npmjs.com/
+[semantic-release]: https://semantic-release.gitbook.io/semantic-release/
 [yargs]: https://yargs.js.org/
 
 ### Bootstrapping a new project
