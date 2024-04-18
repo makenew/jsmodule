@@ -24,8 +24,8 @@
     "index.js",
     "lib",
     "!test",
-    "!**/*.spec.ts",
-    "!**/*.test.ts"
+    "!**/*.spec.js",
+    "!**/*.test.js"
   ],
   "scripts": {
     "test": "c8 ava",
