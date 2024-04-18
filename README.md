@@ -203,7 +203,7 @@ $ gh workflow run version.yml --raw-field version=<version>
 
 [GitHub CLI]: https://cli.github.com/
 [npm-version]: https://docs.npmjs.com/cli/version
-[version workflow_dispatch on GitHub Actions]: https://github.com/seamapi/javascript-http/actions?query=workflow%3Aversion
+[version workflow_dispatch on GitHub Actions]: https://github.com/makenew/jsmodule/actions?query=workflow%3Aversion
 
 ## GitHub Actions
 
